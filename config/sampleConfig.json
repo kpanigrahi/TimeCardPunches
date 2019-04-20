@@ -1,0 +1,69 @@
+{
+    "comments": [
+        "email       : panigrahi.kiran@gmail.com",
+        "description : this is the configuration file for loading puches",
+        "              into Oracle HCM Cloud using timeCardPunches program."
+    ],
+    "folders": {
+        "input": "./in",
+        "working": "./working",
+        "output": "./out"
+    },
+    "chunkSize": 500,
+    "threads": 20,
+    "noOfParallelEvents": 20,
+    "timeEvent": {
+        "path": "/hcmRestApi/resources/latest/timeEventRequests",
+        "headers": [
+            {
+                "name": "Content-Type",
+                "value": "application/vnd.oracle.adf.resourceitem+json"
+            }
+        ],
+        "environments": [
+            {
+                "http": "https",
+                "name": "DEV1",
+                "host": "your host name",
+                "port": "443",
+                "userName": "system user name",
+                "password": "system password"
+            },
+            {
+                "http": "https",
+                "name": "DEV2",
+                "host": "another host name",
+                "port": "443",
+                "userName": "system user name",
+                "password": "system password"
+            }
+        ]
+    },
+    "timeRecordEvent": {
+        "path": "/hcmRestApi/resources/latest/timeRecordEventRequests",
+        "headers": [
+            {
+                "name": "Content-Type",
+                "value": "application/vnd.oracle.adf.resourceitem+json"
+            }
+        ],
+        "environments": [
+            {
+                "http": "https",
+                "name": "DEV1",
+                "host": "your host name",
+                "port": "443",
+                "userName": "system user name",
+                "password": "system password"
+            },
+            {
+                "http": "https",
+                "name": "DEV2",
+                "host": "another host name",
+                "port": "443",
+                "userName": "system user name",
+                "password": "system password"
+            }
+        ]
+    }
+}
